@@ -1,0 +1,41 @@
+@use "./../../../helper/mixins" as m;
+@use "./../../../helper/variables" as v;
+
+@mixin hero() {
+  .template-wireframe {
+    @include m.flex(center, center, row); // Flex untuk center alignment
+    border-radius: map-get($map: v.$color, $key: "background"); // Gunakan variable warna latar
+
+    .text-section {
+      flex: 1;
+      padding: v.$padding-horizontal-main v.$padding-vertical-main; // Padding horizontal dan vertical
+      text-align: left;
+
+      h2 {
+        font-family: v.$poppins; // Font Poppins dari variable
+        font-size: v.$font-size-large;
+        font-weight: bold;
+        color: map-get($map: v.$color, $key: "text-primary"); // Warna teks utama
+        margin-bottom: v.$padding-vertical-main;
+      }
+
+      p {
+        font-family: v.$lato; // Font Lato dari variable
+        font-size: v.$font-size-medium;
+        color: map-get($map: v.$color, $key: "text-secondary" ); // Warna teks sekunder
+        line-height: 1.5;
+      }
+    }
+
+    .image-section {
+      flex: 1;
+      @include m.flex(center, center); // Gunakan mixin flex
+      padding: v.$padding-horizontal-main;
+
+      img {
+        width: 90%; // Lebar gambar
+        @include m.circle(16vw); // Gambar berbentuk lingkaran
+      }
+    }
+  }
+}

@@ -286,6 +286,32 @@
   text-decoration: underline;
 }
 
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: #595959;
+  border-top: 0.1vw solid rgba(0, 0, 0, 0.1);
+  padding: 1vw 2vw;
+}
+.footer .social-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 1.6vw;
+}
+.footer .social-media a {
+  text-decoration: none;
+}
+.footer .social-media a i {
+  font-size: 1.5vw;
+}
+.footer .social-media a:hover {
+  transition: 0.5s;
+}
+
 *,
 *::before,
 *::after {

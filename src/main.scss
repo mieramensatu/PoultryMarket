@@ -4,6 +4,8 @@
 @use "./component/Navbar/navbar";
 @use "./pages/Login/login";
 @use "./pages/Register/register";
+@use "./component/Footer/footer";
+
 *,
 *::before,
 *::after {

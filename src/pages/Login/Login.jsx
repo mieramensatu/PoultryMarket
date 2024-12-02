@@ -36,9 +36,9 @@ function Login() {
         console.log("Server Response:", response.data); // Debugging respons server
 
         // Ambil data dari respons server
-        const { message = "", token = null } = response.data;
+        const { message = "", token = null, user = null } = response.data;
 
-        if (response.data.user) {
+        if (user) {
           // Simpan token ke localStorage atau state management jika perlu
           if (token) {
             localStorage.setItem("authToken", token);

@@ -1,0 +1,14 @@
+@use "./../../helper/mixins" as m;
+@use "./../../helper/variables" as v;
+
+@use "./hero/hero" as hero;
+@use "./partner/partner" as partners;
+
+.home {
+  padding: v.$padding-vertical-main v.$padding-horizontal-main;
+
+  .hero {
+    @include hero.hero();
+  }
+  
+}

@@ -8,8 +8,8 @@ function Register() {
 
   // Inisialisasi state dengan useState
   const [values, setValues] = useState({
-    name: "",
-    phone: "",
+    nama: "",
+    no_telp: "",
     email: "",
     password: "",
   });
@@ -23,7 +23,7 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!values.name || !values.phone || !values.email || !values.password) {
+    if (!values.nama || !values.no_telp || !values.email || !values.password) {
       Swal.fire({
         title: "Error",
         text: "All fields are required!",
@@ -35,11 +35,13 @@ function Register() {
 
     axios
       .post(
-        "https://farmmonitoring-7f23543656d8.herokuapp.com/register",
+        "https://farmmonitoring-7f23543656d8.herokuapp.com/regis",
         values
       )
       .then((response) => {
-        if (response.data.success) {
+        console.log("Server Response:", response);
+        
+        if (response.data.status) {
           Swal.fire({
             title: "Registration Successful",
             text: "You have successfully registered!",
@@ -51,13 +53,14 @@ function Register() {
         } else {
           Swal.fire({
             title: "Registration Failed",
-            text: response.data.message || "Something went wrong!",
+            text: response.data.message || "Invalid data!",
             icon: "error",
             confirmButtonText: "Try Again",
           });
         }
       })
       .catch((error) => {
+        console.log("Server Error:", error.response);
         Swal.fire({
           title: "Error",
           text: error.response?.data?.message || "Something went wrong!",
@@ -84,9 +87,9 @@ function Register() {
                 id="name"
                 className="register-form__input"
                 placeholder="Enter your full name"
-                name="name"
+                name="nama"
                 onChange={handleInputChange}
-                value={values.name}
+                value={values.nama}
               />
             </div>
 
@@ -99,9 +102,9 @@ function Register() {
                 id="phone"
                 className="register-form__input"
                 placeholder="Enter your phone number"
-                name="phone"
+                name="no_telp"
                 onChange={handleInputChange}
-                value={values.phone}
+                value={values.no_telp}
               />
             </div>
 

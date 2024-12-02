@@ -14,7 +14,7 @@ function HeroComponent() {
           </p>
         </div>
         <div className="image-section">
-          <img src={Hero} alt="Makanear Logo" />
+          <img src={Hero} alt="AyamTernakKu Logo" />
         </div>
       </div>
     </>
