@@ -1,9 +1,12 @@
 import React from "react";
 import Navbar from "../../component/Navbar/Navbar";
 import HeroComponent from "./hero/hero";
-// import Partner from "./partner/partner";
+import Partner from "./partner/partner";
 import SmoothScroll from "../../helper/SmoothScroll";
 import Footer from "../../component/Footer/footer";
+import Tim from "./team/Team";
+import Information from "./information/information.JSX";
+import Faq from "./faq/faq";
 
 function Landingpage() {
   return (
@@ -15,13 +18,19 @@ function Landingpage() {
           <HeroComponent />
         </div>
         <div class="partner">
+          <Partner />
         </div>
-        <div class="benefit"></div>
-        <div class="tim"></div>
-        <div class="information"></div>
-        <div class="faq"></div>
+        <div class="information">
+          <Information />
+        </div>
+        <div class="tim">
+          <Tim />
+        </div>
+        <div class="faq">
+          <Faq />
+        </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 }

@@ -6,7 +6,7 @@
   height: auto;
   padding: v.$padding-vertical-main v.$padding-horizontal-main;
   display: grid;
-  grid-template-columns: v.$width-sidebar 1fr v.$width-sidebar;
+  grid-template-columns: 18vw 1fr 18vw;
 
   &-logo {
     @include m.flex($justify: flex-start);

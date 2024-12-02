@@ -6,6 +6,7 @@
 @use "./pages/Register/register";
 @use "./component/Footer/footer";
 
+@use "./pages/landingpage/landingpage";
 *,
 *::before,
 *::after {
@@ -19,4 +20,5 @@ body {
   overflow-x: hidden;
   font-size: 1.2vw;
   font-family: v.$lato;
+  background-color: #F6F6F6 ;
 }

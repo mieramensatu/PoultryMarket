@@ -2,9 +2,6 @@
 @use "./../../../helper/variables" as v;
 
 @mixin partners() {
-  text-align: center;
-  padding: v.$padding-horizontal-main 0 0 0;
-
   .scrolling-logos {
     width: 100%;
     overflow: hidden;

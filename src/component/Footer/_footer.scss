@@ -3,25 +3,25 @@
 
 .footer {
   @include m.flex($justify: space-between);
-  color: map-get($map: v.$color, $key: "dark-gray");
-  border-top: 0.1vw solid rgba(0, 0, 0, 0.1);
-  padding: v.$padding-vertical-main v.$padding-horizontal-main;
+  color: map-get($map: v.$color, $key: "text-primary"); // Warna teks utama
+  border-top: 0.1vw solid map-get($map: v.$color, $key: "light-gray"); // Warna border sesuai tema
+  padding: v.$padding-vertical-main v.$padding-horizontal-main; // Padding dari variables
+
   .social-media {
-    @include m.flex();
+    @include m.flex(); // Flex untuk icon media sosial
     gap: 1.6vw;
 
-    a {
+    .link {
       text-decoration: none;
-      color: map-get($map: v.$color, $key: "light-cyan");
-      // margin: 0 10px;
+      color: map-get($map: v.$color, $key: "primary"); // Warna link sesuai tema
 
       i {
-        font-size: 1.5vw;
+        font-size: v.$font-size-large; // Ukuran font icon
       }
 
       &:hover {
-        color: map-get($map: v.$color, $key: "dark-cyan");
-        transition: 0.5s;
+        color: map-get($map: v.$color, $key: "secondary"); // Warna saat hover
+        transition: v.$transition-default; // Transisi default
       }
     }
   }
