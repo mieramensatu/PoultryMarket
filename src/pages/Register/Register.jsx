@@ -4,7 +4,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function Register() {
-  axios.defaults.withCredentials = true;
+  axios.defaults.withCredentials = false;
 
   // Inisialisasi state dengan useState
   const [values, setValues] = useState({
@@ -22,6 +22,17 @@ function Register() {
   // Handler untuk submit form
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!values.name || !values.phone || !values.email || !values.password) {
+      Swal.fire({
+        title: "Error",
+        text: "All fields are required!",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+      return;
+    }
+
     axios
       .post(
         "https://farmmonitoring-7f23543656d8.herokuapp.com/register",
